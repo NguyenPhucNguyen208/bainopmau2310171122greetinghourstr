@@ -50,5 +50,61 @@ greeting('2100')             | Good evening!          | 14
 
 #region bailam
 def greeting(hour_str):
-  return 'todo'
+  for i in hour_str:
+      if ord(i) >= 65 and ord(i) <= 122:
+          n = 1
+          break
+      else:
+          n = 0
+
+
+  def loai_1 (hour_str):
+      if 'a' in hour_str or "A" in hour_str:
+          return "Good morning!"
+      elif 'p' in hour_str or "P" in hour_str:
+          if ':' in hour_str: 
+            r = hour_str.split(":")[0]
+            r = r.strip()
+            r = int(r) + 12
+            if r >= 12 and r <= 18:
+                return "Good afternoon!"
+            else:
+                return "Good evening!"
+          elif ":" not in hour_str :
+            r = hour_str.split("p" or "P")[0]
+            r = r.strip()
+            r = int(r) + 12
+            if r >= 12 and r <= 18:
+                return "Good afternoon!"
+            else:
+                return "Good evening!"
+  def loai_0 (hour_str) :
+      if ':' in hour_str :
+          a = hour_str.split(':')[0]
+          a = a.strip()
+          a = int(a)
+          b = hour_str.split(':')[1]
+          b = b.strip()
+          b = int(b)
+          if a >= 0 and a <= 11 :
+              if b >= 0 and b <= 59 :
+                  return "Good morning!"
+              else : return "Good afternoon!"
+          elif a <= 18 :
+              if b >= 0 and b <= 59:
+                  return "Good afternoon!"
+              else :
+                  return "Goon evening!"
+          else :
+              return "Good evening!"
+      elif int(hour_str) >= 0 and int(hour_str) <= 1159 :
+          return "Good morning!"
+      elif int(hour_str) < 1800 :
+          return "Good afternoon!"
+      else :
+          return "Good evening!"
+  if n == 1:
+      return (loai_1(hour_str))
+  if n == 0:
+      return (loai_0(hour_str))
 #endregion bailam
